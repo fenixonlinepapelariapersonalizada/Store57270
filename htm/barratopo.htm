@@ -1,0 +1,97 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>
+<link href="https://fonts.gstatic.com" crossorigin rel="dns-prefetch" rel="preconnect">
+<link href="https://fonts.googleapis.com/" rel="dns-prefetch" rel="preconnect">
+<link href="https://ajax.googleapis.com" rel="dns-prefetch">
+<link href="https://stats.g.doubleclick.net" rel="dns-prefetch" rel="preconnect">
+<link href="https://www.facebook.com" rel="dns-prefetch" rel="preconnect">
+<link href="https://connect.facebook.net" rel="dns-prefetch" rel="preconnect">
+<link href="https://www.google-analytics.com" rel="dns-prefetch">
+<link href="https://www.googletagmanager.com/" rel="dns-prefetch">
+<script src="/js/vex/v4.0.1/vex.combined.min.js?cccfc=1"></script>
+<script src="/js/flickity/v2.2.2/flickity-min.js?cccfc=1"></script>
+<link href="/css/flickity/v2.2.2/flickity-min.css?cccfc=1" rel=stylesheet>
+<link rel="preload" href="<StorePath>htm/css/mega-menu-dropdown.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<StoreInterests>
+<script src='<PathTo file="htm/js/resource-<StoreLanguage>.js">'></script>
+<script src='<PathTo file="htm/js/config.js">'></script>
+<script src='<PathTo file="htm/js/store-lib.js">'></script>
+<script>
+vex.defaultOptions.className="vex-theme-default";
+var iItensCesta=<QtdCesta>;
+var iQtdProds=0;
+ImgLoadingFC="/images/circular-loading.svg?cccfc=1";
+ImgOnError=FC$.PathImg+"nd";
+FCLib$.LazyLoadWaitImage="/images/circular-loading.svg?cccfc=1"; /* loading lazy load */
+</script>
+
+<header>
+  <nav id="navigation" class="navigation navigation-justified navigation-landscape">
+    <div class="header-container">
+      <!-- Offcanvas Menu Mobile -->
+      <div class="header-container-bar-menu header-offcanvas-menu">
+        <div class="navigation-button-toggler">
+          <i class="hamburger-icon"></i>
+        </div>
+      </div>
+      <!-- Logo -->
+      <div class="header-logo">
+        <a href="<StoreDomain>"><img alt="<storeName>" src="" class="header-container-logo" width="200" height="100" onerror="sF$.fnSetConfigLogo(this,'<store-logo>')"></a>
+      </div>
+      <!-- Search -->
+      <div class="header-search">
+          <form name="TopSearchForm" method="GET" id="autocomplete-form" action="<url-prod>">
+            <input type="hidden" name="<par-typed>" value="true">
+            <div class="header-search-input-container">
+              <input type="text" id="autocomplete" value="<SearchText>" name="<par-text>" class="InputTextBusca" aria-label="Search field">
+              <button id="search-button" type="submit" aria-label="Search">                     
+                <img width="27" height="28" src="<storePath>images/iconsearch.svg?cccfc=1" alt="Search" id="voiceSearchMGlass">
+              </button>
+              <img class="header-speech-icon" id="voiceSearch" onclick="sF$.fnStartDictation()" src="<storePath>images/icon-speech.svg?cccfc=1" width="34" height="34" alt="Voice" />
+            </div>
+          </form>
+      </div>
+      <!-- Login -->
+      <div class="header-login">
+        <span class="loginInfo" id="fc-loginInfo"></span>
+        <a href="<url-account>"><span class="header-login-text"><var key="theme-4-header-account-txt"></var></span></a>
+      </div>
+      <!-- Shopping Cart -->
+      <div class="header-cart">
+        <span onclick="Cart$.fnShowCartCheckout();" style="cursor:pointer;">
+          <div class="header-shopping-cart-icon"><img width="30" height="30" src="<storePath>images/iconcart.svg" id="header-cat-cart" alt="Cart"></div>
+          <div class="header-shopping-cart-qty"><span id="idCartItemsTop" class="HeaderCartNumberProds"></span></div>
+          <span class="header-cart-text"><var key="theme-4-header-cart-txt"></var></span>
+        </span>
+      </div>
+      <!-- Menu Dropdown -->
+      <div class="navigation-body scroll-momentum header-menu">
+        <div class="navigation-body-header">
+          <span class="navigation-body-close-button">&times;</span>
+        </div>
+        <ul class="navigation-menu" id="horizontalMenuCont">
+          <li class="navigation-item is-active"><a href="/" class="navigation-link navigation-text-uppercase"><var key="header-cat-home"></var></a></li>
+          <li class="navigation-item navigation-item-mobile navigation-text-uppercase"><a href="<url-sale>" class="navigation-link"><var key="header-cat-sales"></var></a></li>
+          <li class="navigation-item navigation-item-mobile navigation-text-uppercase"><a href="<url-release>" class="navigation-link"><var key="header-cat-releases"></var></a></li>
+          <li class="navigation-item navigation-item-mobile navigation-text-uppercase"><a href="<url-categories>" class="navigation-link"><categories></a></li>
+          <script>
+            <ListPathCat out="14">
+            sF$.fnHeaderDropdown();
+          </script>
+          <li class="navigation-item navigation-item-mobile navigation-text-uppercase"><a href="<url-add-product>" class="navigation-link"><var key="header-cat-cart"></var></a></li>
+          <li class="navigation-item navigation-item-mobile navigation-text-uppercase"><a href="<url-account>?orders=1#Orders" class="navigation-link"><var key="header-cat-my-orders"></var></a></li>
+          <li class="navigation-item navigation-item-mobile navigation-text-uppercase"><a href="<url-account>?wishlist=1#Wishlist" class="navigation-link"><var key="header-cat-my-wishlist"></var></a></li>
+          <li class="navigation-item navigation-item-mobile navigation-text-uppercase"><a href="<url-account>?register=1#Register" class="navigation-link"><var key="header-cat-register"></var></a></li>
+          <li class="navigation-item navigation-item-mobile navigation-text-uppercase"><a href="<url-newsletter>" class="navigation-link"><var key="header-cat-newsletter"></var></a></li>
+          <li class="navigation-item navigation-text-uppercase"><a href="<url-contact>" class="navigation-link"><var key="header-cat-contact-us"></var></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Receive Banner Home -->
+<div id="FC-ShowHomeBanners"></div>
+<!-- End Banner Home -->
+
+<!-- Begin Aside - Don't remove -->
+<div class="middle-container" role="main">
